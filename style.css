@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css?family=Noto%20Serif%20Armenian:700|Noto%20Serif%20Armenian:400');
+
+::-webkit-scrollbar {
+    display: none;
+}
+:root {
+    --text: #15140f;
+    --background: #f7f8f5;
+    --primary: #999b77;
+    --secondary: #b4c3ae;
+    --accent: #94ad8f;
+}
+body {
+    font-family: 'Noto Serif Armenian';
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+    color: var(--text);
+}
+h1, h2, h3, h4, h5 {
+    font-family: 'Noto Serif Armenian';
+    font-weight: 700;
+}
+html {font-size: 100%;} /* 16px */
+h1 {font-size: 4.210rem; /* 67.36px */}
+h2 {font-size: 3.158rem; /* 50.56px */}
+h3 {font-size: 2.369rem; /* 37.92px */}
+h4 {font-size: 1.777rem; /* 28.48px */}
+h5 {font-size: 1.333rem; /* 21.28px */}
+
+small {font-size: 0.750rem; /* 12px */}
+.container {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    background: var(--background);
+}
+h1 {
+    text-align: center;
+    color: var(--primary);
+}
+h3 {
+    text-align: center;
+    color: var(--secondary);
+}
+.keywords {
+    margin: 20px 0;
+    padding: 10px;
+    background: var(--secondary); /* Giallo sabbia */
+    border-radius: 5px;
+    border: 1px solid var(--text);
+}
+.keywords p {
+    margin: 0;
+    padding: 0;
+    color: var(--text); /* Grigio ardesia */
+}
+.words{
+    display: flex;
+    justify-content: space-between;
+}
+.left-column,
+.right-column {
+    flex-basis: 50%; /* Imposta la larghezza delle colonne */
+    padding: 10; /* Rimuove il padding predefinito degli elenchi */
+}
+.right-column {
+    padding-left: 20%;
+}
+
+a {
+    color: var(--accent); /* Verde mare */
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+ol {
+    line-height: 250%;
+    padding-left: 20px;
+}
+ol li a {
+    color: var(--text);
+}
+.timeline {
+    position: fixed;
+    top: 10%;
+    left: 1%;
+    width: 10%;
+    text-wrap: nowrap;
+    overflow: hidden;
+    transition: 0.3s;
+}
+.timeline:hover{
+    width: 25%;
+}
+
+#titlebar {
+    display: block;
+    position: fixed;
+    top: 0;
+    height: 32px;
+    border-radius: 0 0 20px 20px;
+    margin-left: 30%;
+    width: 40%;
+    background: var(--primary);
+}  
+
+#titlebar #drag-region {
+    width: 100%;
+    height: 100%;
+    -webkit-app-region: drag;
+}
