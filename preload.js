@@ -1,6 +1,8 @@
-const Main = require("electron/main");
+const {ipcRenderer} = require('electron')
 
-function Test()
-{
-    Console.Log(Main.BaseWindow.getAllWindows());
-}
+ipcRenderer.on("max", (evn) => {
+    document.getElementById("titlebar").style.display = "none";
+})
+ipcRenderer.on("min", (evn) => {
+    document.getElementById("titlebar").style.display = "block";
+})

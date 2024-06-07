@@ -1,5 +1,8 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('node:path')
+const { EventEmitter } = require('node:events');
+
+var eventEmitter = new EventEmitter();
 
 app.whenReady().then(() => {
   createWindow()
@@ -14,8 +17,8 @@ const createWindow = () => {
         width: 800,
         height: 600,
         webPreferences: {
-            // preload: path.join(__dirname, 'preload.js')
-            nodeIntegration: true
+            nodeIntegration: true,
+            preload: path.join(__dirname, 'preload.js')
         },
         titleBarStyle: 'hidden',
         titleBarOverlay: {
@@ -24,6 +27,12 @@ const createWindow = () => {
         }
     })
     win.loadFile('index.html')
+    win.addListener("maximize", ()=>{
+        win.webContents.send("max");
+    })
+    win.addListener("unmaximize", ()=>{
+        win.webContents.send("min");
+    })
 }
 
 app.on('window-all-closed', () => {

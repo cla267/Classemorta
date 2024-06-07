@@ -25,12 +25,16 @@
     "forge": {
       "makers": [
         {
-          "name": "@electron-forge/maker-zip"
+          "name": "@electron-forge/maker-dmg",
+          "config": {
+            "format": "ULFO"
+          }
         }
       ]
     }
   },
   "dependencies": {
+    "@electron-forge/maker-dmg": "^7.4.0",
     "electron-squirrel-startup": "^1.0.1"
   }
 }
