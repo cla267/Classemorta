@@ -22,7 +22,7 @@ const createWindow = () => {
         },
         titleBarStyle: 'hidden',
         titleBarOverlay: {
-            color: '#999b77',
+            color: '#f7f8f5',
             radius: 30
         }
     })
