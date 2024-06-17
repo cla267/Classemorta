@@ -18,21 +18,19 @@ const createWindow = () => {
         height: 600,
         webPreferences: {
             nodeIntegration: true,
-            preload: path.join(__dirname, 'preload.js')
+            // preload: path.join(__dirname, 'preload.js')
         },
         titleBarStyle: 'hidden',
         titleBarOverlay: {
-            color: '#f7f8f5',
-            radius: 30
         }
     })
-    win.loadFile('index.html')
-    win.addListener("maximize", ()=>{
-        win.webContents.send("max");
-    })
-    win.addListener("unmaximize", ()=>{
-        win.webContents.send("min");
-    })
+    win.loadFile('main.html')
+    // win.addListener("maximize", ()=>{
+    //     win.webContents.send("max");
+    // })
+    // win.addListener("unmaximize", ()=>{
+    //     win.webContents.send("min");
+    // })
 }
 
 app.on('window-all-closed', () => {
