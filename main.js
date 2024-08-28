@@ -18,11 +18,10 @@ const createWindow = () => {
         height: 600,
         webPreferences: {
             nodeIntegration: true,
-            // preload: path.join(__dirname, 'preload.js')
+            preload: path.join(__dirname, 'index.js')
         },
-        titleBarStyle: 'hidden',
-        titleBarOverlay: {
-        }
+        frame:true,
+        autoHideMenuBar: true,
     })
     win.loadFile('main.html')
     // win.addListener("maximize", ()=>{

@@ -1,0 +1,28 @@
+:root {
+    --text: #354a5f;
+    --background: #edf1f2;
+    --primary: #2b3d50;
+    --secondary: #6ea6de;
+    --accent: #228c22;
+}
+
+[theme=false] {
+    --text: #a0b5ca;
+    --background: #0d1112;
+    --primary: #afc1d4;
+    --secondary: #215991;
+    --accent: #73dd73;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--primary);
+}
+
+input{
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: var(--accent);
+    color: var(--background);
+}
