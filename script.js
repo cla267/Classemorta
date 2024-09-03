@@ -1,7 +1,8 @@
-// true = light, false = dark
+// true/"." = light, false/"" = dark
 var theme = true
 
-theme = localStorage.getItem("theme");
+theme = localStorage.getItem("theme") === "true";
+console.log(`${theme}  -  ${localStorage.getItem("theme")}`)
 document.body.setAttribute("theme", theme);
 
 function switchTheme()
@@ -9,7 +10,15 @@ function switchTheme()
     theme = !theme;
     document.body.setAttribute("theme", theme)
     localStorage.setItem("theme", theme)
+    console.log(`${theme}  -  ${localStorage.getItem("theme")}`)
 }
+
+function getUserPath(){
+    window.versions.path().then((result)=>{
+        document.getElementById("title").innerHTML = result;
+    });
+}
+
 
 /*
 competenza alfabetica funzionale, *

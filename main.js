@@ -1,10 +1,16 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain, dialog } = require('electron/main')
 const path = require('node:path')
-const { EventEmitter } = require('node:events');
+// const { EventEmitter } = require('node:events');
 
-var eventEmitter = new EventEmitter();
+// var eventEmitter = new EventEmitter();
+
+async function handleGetUserPath()
+{
+    return app.getPath("userData")
+}
 
 app.whenReady().then(() => {
+  ipcMain.handle("get_user_path", handleGetUserPath)
   createWindow()
 
   app.on('activate', () => {
@@ -21,7 +27,7 @@ const createWindow = () => {
             preload: path.join(__dirname, 'preload.js')
         },
         frame:true,
-        autoHideMenuBar: true,
+        autoHideMenuBar: true
     })
     win.loadFile('main.html')
     // win.addListener("maximize", ()=>{
